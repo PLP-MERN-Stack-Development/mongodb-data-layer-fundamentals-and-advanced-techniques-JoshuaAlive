@@ -1,75 +1,59 @@
-# 📚 PLP Bookstore - MongoDB Scripts
+# MongoDB Fundamentals - Week 1
 
-This project demonstrates how to set up a MongoDB database (`plp_bookstore`) with a sample **books collection**, populate it with sample data, and run **basic, advanced, and aggregation queries** using Node.js and the official MongoDB driver.
+## Setup Instructions
 
----
+Before you begin this assignment, please make sure you have the following installed:
 
-## 🚀 Features
-- **insert_books.js**
-  - Connects to a MongoDB server (local or Atlas).
-  - Creates the `plp_bookstore` database and `books` collection.
-  - Populates it with sample book data (12 popular books).
-  - Prints inserted documents.
+1. **MongoDB Community Edition** - [Installation Guide](https://www.mongodb.com/docs/manual/administration/install-community/)
+2. **MongoDB Shell (mongosh)** - This is included with MongoDB Community Edition
+3. **Node.js** - [Download here](https://nodejs.org/)
 
-- **queries.js**
-  - Demonstrates MongoDB queries in Node.js:
-    - Basic queries (`find`, `updateOne`, `deleteOne`)
-    - Advanced queries (sorting, pagination, projections)
-    - Aggregation pipelines (average price by genre, books by decade, top author)
-    - Indexing & query performance with `.explain()`
+### Node.js Package Setup
 
----
+Once you have Node.js installed, run the following commands in your assignment directory:
 
-## 🛠️ Requirements
-- **Node.js** (v14+ recommended)
-- **MongoDB** (local installation or MongoDB Atlas cluster)
-- **npm packages**:
-  - [mongodb](https://www.npmjs.com/package/mongodb)
-  - [dotenv](https://www.npmjs.com/package/dotenv) (optional, if you want to use environment variables)
-
-Install dependencies:
 ```bash
-npm install mongodb dotenv
+# Initialize a package.json file
+npm init -y
 
-git clone https://github.com/your-username/plp-bookstore.git
-cd plp-bookstore
+# Install the MongoDB Node.js driver
+npm install mongodb
+```
 
-      --- Database Connection ---
-const uri = 'mongodb://localhost:27017';
+## Assignment Overview
 
-const uri = process.env.MONGO_URI; // Example if using .env
+This week focuses on MongoDB fundamentals including:
+- Creating and connecting to MongoDB databases
+- CRUD operations (Create, Read, Update, Delete)
+- MongoDB queries and filters
+- Aggregation pipelines
+- Indexing for performance
 
-MONGO_URI=mongodb+srv://username:password@cluster0.mongodb.net
+## Submission
 
+Complete all the exercises in this assignment and push your code to GitHub using the provided GitHub Classroom link.
 
---- ▶️ Running the Scripts ---
-Populate database with sample books
+## Getting Started
 
-node insert_books.js
+1. Accept the GitHub Classroom assignment invitation
+2. Clone your personal repository that was created by GitHub Classroom
+3. Install MongoDB locally or set up a MongoDB Atlas account
+4. Run the provided `insert_books.js` script to populate your database
+5. Complete the tasks in the assignment document
 
----- Run queries ----
-node queries.js
+## Files Included
 
-// Find all books
-db.books.find()
+- `Week1-Assignment.md`: Detailed assignment instructions
+- `insert_books.js`: Script to populate your MongoDB database with sample book data
 
-// Find books by a specific author
-db.books.find({ author: "George Orwell" })
+## Requirements
 
-// Find books published after 1950
-db.books.find({ published_year: { $gt: 1950 } })
+- Node.js (v18 or higher)
+- MongoDB (local installation or Atlas account)
+- MongoDB Shell (mongosh) or MongoDB Compass
 
-// Find in-stock books
-db.books.find({ in_stock: true })
+## Resources
 
-=== Project Structure ===
-plp-bookstore/
-│── insert_books.js   # Script to insert sample books
-│── queries.js        # Query examples (basic, advanced, aggregation, indexing)
-│── package.json      # Dependencies
-│── .env              # (optional) Atlas connection string
-
-
-👨‍💻 Author
-Omotosho Joshua
-MERN Stack Assignment for MongoDB.
+- [MongoDB Documentation](https://docs.mongodb.com/)
+- [MongoDB University](https://university.mongodb.com/)
+- [MongoDB Node.js Driver](https://mongodb.github.io/node-mongodb-native/) 
